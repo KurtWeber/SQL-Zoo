@@ -1,0 +1,163 @@
+1.  SELECT COUNT(winner) FROM nobel
+
+Correct answer
+COUNT(winner)
+813
+
+2.  select distinct(subject) from nobel
+
+Correct answer
+subject
+Chemistry
+Economics
+Literature
+Medicine
+Peace
+Physics
+
+3.  SELECT COUNT(winner) FROM nobel
+    where subject = 'Physics'
+
+Correct answer
+COUNT(winner)
+184
+
+4.  select subject,count(winner) from nobel
+    group by subject
+
+Correct answer
+subject	count(winner)
+Chemistry	154
+Economics	62
+Literature	105
+Medicine	192
+Peace	116
+Physics	184
+
+5.  select subject, min(yr) from nobel
+    group by subject
+
+Correct answer
+subject	min(yr)
+Chemistry	1901
+Economics	1969
+Literature	1901
+Medicine	1901
+Peace	1901
+Physics	1901
+
+6.  select subject, count(subject) from nobel
+    where yr=2000
+    group by subject
+
+Correct answer
+subject	count(subject)
+Chemistry	3
+Economics	2
+Literature	1
+Medicine	3
+Peace	1
+Physics	3
+
+7.  select subject,count(distinct(winner)) from nobel
+    group by subject
+
+Correct answer
+subject	count(distinc..
+Chemistry	153
+Economics	62
+Literature	105
+Medicine	192
+Peace	114
+Physics	183
+
+
+8.  select subject, count(distinct(yr)) from nobel
+    group by subject
+
+Correct answer
+subject	count(distinc..
+Chemistry	100
+Economics	40
+Literature	101
+Medicine	99
+Peace	86
+Physics	102
+
+
+9.  select yr from nobel where subject = 'Physics' group by yr having count(yr) = 3
+
+Correct answer
+yr
+1903
+1956
+1958
+1963
+1964
+1965
+1972
+1973
+1975
+1977
+1978
+1979
+1981
+1986
+1988
+1989
+1990
+1996
+1997
+1998
+2000
+2001
+2002
+2003
+2004
+2005
+2008
+
+10.  select winner from nobel group by winner having count(winner) > 1
+
+Correct answer
+winner
+Frederick Sanger
+International Committee of the Red Cross
+John Bardeen
+Linus Pauling
+Marie Curie
+
+11.  select winner from nobel group by winner having count(distinct(subject)) > 1
+
+Correct answer
+winner
+Linus Pauling
+Marie Curie
+
+12.  select yr, subject from nobel where yr >= 2000 group by subject, yr having count (subject) >= 3 order by yr
+
+Correct answer
+yr	subject
+2000	Physics
+2000	Chemistry
+2000	Medicine
+2001	Medicine
+2001	Physics
+2001	Chemistry
+2001	Economics
+2002	Medicine
+2002	Physics
+2002	Chemistry
+2003	Physics
+2004	Physics
+2004	Chemistry
+2005	Physics
+2005	Chemistry
+2007	Economics
+2007	Medicine
+2008	Medicine
+2008	Physics
+2008	Chemistry
+
+
+
