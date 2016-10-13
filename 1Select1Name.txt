@@ -1,0 +1,47 @@
+Select 1
+
+Name:
+
+1.  SELECT name FROM world
+      WHERE name LIKE 'Y%'
+
+Correct answer
+name
+Yemen
+
+2.  SELECT name FROM world
+      WHERE name LIKE '%y'
+
+Correct answer
+name
+Turkey
+Germany
+Hungary
+Italy
+Norway
+Vatican City
+Paraguay
+Uruguay
+
+3.  SELECT name FROM world
+      WHERE name LIKE '%x%'
+
+Correct answer
+name
+Luxembourg
+Mexico
+
+4. SELECT name FROM world
+     WHERE name LIKE '%land'
+
+Correct answer
+name
+Swaziland
+Thailand
+Finland
+Iceland
+Ireland
+Poland
+Switzerland
+New Zealand
+

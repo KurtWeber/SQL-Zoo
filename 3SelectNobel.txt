@@ -1,0 +1,214 @@
+Select 3
+
+Nobel:
+
+1.  SELECT yr, subject, winner
+  FROM nobel
+ WHERE yr = 1950
+
+Correct answer
+yr	subject	winner
+1950	Chemistry	Kurt Alder
+1950	Chemistry	Otto Diels
+1950	Literature	Bertrand Russell
+1950	Medicine	Philip S. Hench
+1950	Medicine	Edward C. Kendall
+1950	Medicine	Tadeus Reichstein
+1950	Peace	Ralph Bunche
+1950	Physics	Cecil Powell
+
+2.  SELECT winner
+  FROM nobel
+ WHERE yr = 1962
+   AND subject = 'Literature'
+
+Correct answer
+winner
+John Steinbeck
+
+3.  select yr, subject
+from nobel
+where winner='Albert Einstein'
+
+Correct answer
+yr	subject
+1921	Physics
+
+4.  select winner
+from nobel
+where subject = 'Peace' and yr >= 2000
+
+Correct answer
+winner
+Martti Ahtisaari
+Intergovernmental Panel on Climate Change
+Al Gore
+Grameen Bank
+Muhammad Yunus
+International Atomic Energy Agency
+Mohamed ElBaradei
+Wangari Maathai
+Shirin Ebadi
+Jimmy Carter
+United Nations
+Kofi Annan
+Kim Dae-jung
+
+5.  select yr, subject, winner
+from nobel
+where yr >= 1980 and yr <= 1989 and subject = 'Literature'
+
+Correct answer
+yr	subject	winner
+1989	Literature	Camilo José Cela
+1988	Literature	Naguib Mahfouz
+1987	Literature	Joseph Brodsky
+1986	Literature	Wole Soyinka
+1985	Literature	Claude Simon
+1984	Literature	Jaroslav Seifert
+1983	Literature	William Golding
+1982	Literature	Gabriel García Márquez
+1981	Literature	Elias Canetti
+1980	Literature	Czeslaw Milosz
+
+6.  SELECT * FROM nobel
+ WHERE winner IN ('Theodore Roosevelt','Woodrow Wilson','Jimmy Carter')
+
+Correct answer
+yr	subject	winner
+2002	Peace	Jimmy Carter
+1919	Peace	Woodrow Wilson
+1906	Peace	Theodore Roosevelt
+
+7.  select winner from nobel
+where winner like 'John%'
+
+Correct answer
+winner
+John C. Mather
+John L. Hall
+John B. Fenn
+John E. Sulston
+John Pople
+John Hume
+John E. Walker
+John C. Harsanyi
+John F. Nash Jr.
+John C. Polanyi
+John R. Vane
+John H. van Vleck
+John Cornforth
+John R. Hicks
+John Bardeen
+John C. Kendrew
+John Steinbeck
+John Bardeen
+John F. Enders
+John Cockcroft
+John H. Northrop
+John R. Mott
+John Galsworthy
+John Macleod
+
+8.  select * from nobel
+where (subject = 'Physics' and yr = 1980) or (subject = 'Chemistry' and yr = 1984)
+
+Correct answer
+yr	subject	winner
+1984	Chemistry	Bruce Merrifield
+1980	Physics	James Cronin
+1980	Physics	Val Fitch
+
+9.  select * from nobel
+where yr = 1980 and subject not in ('Chemistry','Medicine')
+
+Correct answer
+yr	subject	winner
+1980	Economics	Lawrence R. Klein
+1980	Literature	Czeslaw Milosz
+1980	Peace	Adolfo Pérez Esquivel
+1980	Physics	James Cronin
+1980	Physics	Val Fitch
+
+10.  select * from nobel
+where (subject = 'Medicine' and yr < 1910) or (subject = 'Literature' and yr >= 2004)
+
+Correct answer
+yr	subject	winner
+2008	Literature	Jean-Marie Gustave Le Clézio
+2007	Literature	Doris Lessing
+2006	Literature	Orhan Pamuk
+2005	Literature	Harold Pinter
+2004	Literature	Elfriede Jelinek
+1909	Medicine	Theodor Kocher
+1908	Medicine	Paul Ehrlich
+1908	Medicine	Ilya Mechnikov
+1907	Medicine	Alphonse Laveran
+1906	Medicine	Camillo Golgi
+1906	Medicine	Santiago Ramón y Cajal
+1905	Medicine	Robert Koch
+1904	Medicine	Ivan Pavlov
+1903	Medicine	Niels Ryberg Finsen
+1902	Medicine	Ronald Ross
+1901	Medicine	Emil von Behring
+
+11.  select * from nobel
+where winner = 'PETER GRÜNBERG'  
+
+Correct answer
+yr	subject	winner
+2007	Physics	Peter Grünberg
+
+12.  select * from nobel
+where winner = 'EUGENE O''NEILL' 
+
+Correct answer
+yr	subject	winner
+1936	Literature	Eugene O'Neill
+
+13.  select winner, yr, subject
+from nobel
+where winner like 'Sir%'
+order by 2 desc, 1 asc
+
+Correct answer
+winner	yr	subject
+Sir Martin J. Evans	2007	Medicine
+Sir Peter Mansfield	2003	Medicine
+Sir Paul Nurse	2001	Medicine
+Sir Harold Kroto	1996	Chemistry
+Sir James W. Black	1988	Medicine
+Sir Arthur Lewis	1979	Economics
+Sir Nevill F. Mott	1977	Physics
+Sir Bernard Katz	1970	Medicine
+Sir John Eccles	1963	Medicine
+Sir Frank Macfarlane Burnet	1960	Medicine
+Sir Cyril Hinshelwood	1956	Chemistry
+Sir Robert Robinson	1947	Chemistry
+Sir Alexander Fleming	1945	Medicine
+Sir Howard Florey	1945	Medicine
+Sir Henry Dale	1936	Medicine
+Sir Norman Angell	1933	Peace
+Sir Charles Sherrington	1932	Medicine
+Sir Venkata Raman	1930	Physics
+Sir Frederick Hopkins	1929	Medicine
+Sir Austen Chamberlain	1925	Peace
+Sir William Ramsay	1904	Chemistry
+
+14.  SELECT winner, subject, subject IN ('Physics','Chemistry')
+  FROM nobel
+ WHERE yr=1984
+
+ ORDER BY 3 asc, 2 asc, 1 asc
+
+Wrong answer. Too many columns  ***I think I have the right answer but couldn't hide the third column***
+winner	subject	subject IN ('..
+Richard Stone	Economics	0
+Jaroslav Seifert	Literature	0
+César Milstein	Medicine	0
+Georges J.F. Köhler	Medicine	0
+Niels K. Jerne	Medicine	0
+Desmond Tutu	Peace	0
+Bruce Merrifield	Chemistry	1
+Carlo Rubbia	Physics	1
+Simon van der Meer	Physics	1
